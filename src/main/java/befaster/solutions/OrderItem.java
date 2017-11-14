@@ -5,6 +5,7 @@ public class OrderItem {
 	private final char sku;
 	private final int unitPrice;
 	private int amountOfProducts;
+	private int finalPrice;
 	
 	public OrderItem(char sku, int unitPrice, int amountOfProducts) {
 		this.sku = sku;
@@ -20,11 +21,23 @@ public class OrderItem {
 		this.amountOfProducts += 1;
 	}
 	
-	public void increaseAmountOfProductsByN(int increase) {
-		this.amountOfProducts += increase;
-	}
-	
 	public int getAmountOfProducts() {
 		return this.amountOfProducts;
+	}
+	
+	public int getUnitPrice() {
+		return this.unitPrice;
+	}
+	
+	public char getSku() {
+		return this.sku;
+	}
+	
+	public void setFinalPrice(int price) {
+		this.finalPrice = (price == 0) ? this.calculateTotal() : price;
+	}
+	
+	public int getFinalPrice() {
+		return (this.finalPrice == 0) ? this.calculateTotal() : this.finalPrice;
 	}
 }

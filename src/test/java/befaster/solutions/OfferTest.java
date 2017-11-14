@@ -20,4 +20,11 @@ public class OfferTest {
 		
 		assertThat(offer.getItemsNotOnOffer(7), equalTo(1));
 	}
+	
+	@Test
+	public void getItemsOnOffer() {
+		Offer offer = new Offer('A', 3, 130);
+				
+		assertThat(offer.getItemsOnOffer(7), equalTo(6));
+	}
 }

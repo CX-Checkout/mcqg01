@@ -24,4 +24,16 @@ public class Offer {
 	public int getItemsNotOnOffer(int amountOfSKU) {
 		return amountOfSKU % this.amountOnOffer;
 	}
+
+	public int getItemsOnOffer(int amountOfSKU) {
+		return amountOfSKU - getItemsNotOnOffer(amountOfSKU);
+	}
+	
+	public char getSku() {
+		return this.sku;
+	}
+	
+	public int getPrice() {
+		return this.price;
+	}
 }

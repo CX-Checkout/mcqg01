@@ -36,4 +36,16 @@ public class AppTest {
 	public void differentInputs() {
 		assertThat(App.checkout("AABB"), equalTo(145));
 	}
+	
+	@Test
+	public void testFreeItem() {
+		assertThat(App.checkout("ABEE"), equalTo(130));
+	}
+	
+	@Test
+	public void testItemOffer() {
+		assertThat(App.checkout("AAAAAA"), equalTo(300));
+		assertThat(App.checkout("ABABAAAA"), equalTo(345));
+		assertThat(App.checkout("AAAAAAAA"), equalTo(320));
+	}
 }
